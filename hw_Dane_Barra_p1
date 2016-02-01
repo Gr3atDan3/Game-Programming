@@ -1,0 +1,21 @@
+size(400,400);
+
+background(100,170,255);
+noStroke();
+smooth();
+
+float c = 0;
+
+while(c < 100) {
+  fill(random(255));
+  rect(200,10,50,5);
+
+  fill(255,15, 100);
+  rect(260,10,10, 5);
+
+  fill(random(5,63));
+  ellipse(280,10,60,5);
+  
+  rotate(0.04);
+  c = c + 1;
+}

@@ -1,0 +1,54 @@
+float r = 0;
+float backR;
+float backG;
+float backB;
+
+void setup() {
+  size(400, 400);
+  backR = random(0, 100);
+  backG = random(0, 100);
+  backB = random(0, 100);
+  
+  background(backR, backG, backB);
+  rectMode(CENTER);
+  
+  noStroke();
+  smooth();
+}
+
+void draw() {
+  fill(backR, backG, backB, 50);
+  rect(width/2, height/2, width, height);
+
+  fill(255);
+  translate(mouseX, mouseY);//rectangle follower
+  rotate(r);
+  rect(0, 0, 100, 100);
+  resetMatrix();
+  
+  fill(0,0,255);
+  translate(100, 100);//1st stationary
+  rotate(r);
+  rect(0, 0, 50, 100);
+  resetMatrix();
+
+  fill(255,0,0);
+  translate(300, 100);//2nd stationary
+  rotate(r);
+  rect(0, 0, 100, 30);
+  resetMatrix();
+
+  fill(0,255,0);
+  translate(100, 300);//3rd stationary
+  rotate(r);
+  rect(0, 0, 90, 60);
+  resetMatrix();
+
+  fill(100,205,245);
+  translate(300, 300);//4th stationary
+  rotate(r);
+  rect(0, 0, 100, 70);
+  resetMatrix();
+
+  r = r + 0.02;
+}
